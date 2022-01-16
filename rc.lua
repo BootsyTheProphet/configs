@@ -322,9 +322,9 @@ globalkeys = gears.table.join(
               {description = "Open Firefox", group = "launcher"}),
 
 
-  -- PcmanFM
-    awful.key({ modkey },            "f",     function () awful.util.spawn("pcmanfm") end,
-              {description = "Launch PCmanFM", group = "launcher"}),
+  -- Thunar
+    awful.key({ modkey },            "f",     function () awful.util.spawn("thunar") end,
+              {description = "Launch Thunar", group = "launcher"}),
 
    -- Show/Hide Wibox
      awful.key({ modkey }, ".", function ()
@@ -432,18 +432,7 @@ for i = 1, 9 do
                           end
                      end
                   end,
-                  {description = "move focused client to tag #"..i, group = "tag"}),
-        -- Toggle tag on focused client.
-        awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9,
-                  function ()
-                      if client.focus then
-                          local tag = client.focus.screen.tags[i]
-                          if tag then
-                              client.focus:toggle_tag(tag)
-                          end
-                      end
-                  end,
-                  {description = "toggle focused client on tag #" .. i, group = "tag"})
+                  {description = "move focused client to tag #"..i, group = "tag"})
     )
 end
 
@@ -593,6 +582,7 @@ beautiful.useless_gap = 5
 
 -- Autostart
 awful.spawn.with_shell("~/.screenlayout/Default.sh")
+awful.spawn.with_shell("lxpolkit")
 awful.spawn.with_shell("nitrogen --restore")
 awful.spawn.with_shell("picom")
 awful.spawn.with_shell("dunst")
