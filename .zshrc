@@ -100,12 +100,16 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # kali tty docker container:
-alias create_kali="docker container create --name=kali -it --network host -v ~/Documents/kali_shared:/home/kali_shared c2fadbc65f8d"
+#alias create_kali="docker container create --name=kali -it --network host -v ~/Documents/kali_shared:/home/kali_shared c2fadbc65f8d"
 # kali tty docker container with GUI ability (remember to enable xhost + on host!):
-#alias create_kali="docker container create --name=kali -it -e DISPLAY=$DISPLAY --network host -v /tmp/.X11-unix:/tmp/.X11-unix -v ~/Documents/kali_shared:/home/kali_shared kali:latest"
+alias create_kali="docker container create --name=kali -it -e DISPLAY=$DISPLAY --network host -v /tmp/.X11-unix:/tmp/.X11-unix -v ~/Documents/kali_shared:/home/kali_shared kali:latest"
 # create recon playground to test with
 alias create_recon="docker container create --name=recon -it -e DISPLAY=$DISPLAY --network host -v /tmp/.X11-unix:/tmp/.X11-unix -v ~/Documents/recon:/home/shared ubuntu:latest"
 
-alias kali="docker container start kali & docker container attach kali"
-alias recon="docker container start recon & docker container attach recon"
+alias kali="docker container start kali; docker container attach kali"
+alias recon="docker container start recon; docker container attach recon"
+
+# Run BurpSuite Pro with loader
+alias burppro="java --illegal-access=permit --add-opens java.base/java.util=ALL-UNNAMED-Dfile.encoding=utf-8 -javaagent:/home/xnor/BurpSuitePro/loader.jar -noverify -jar ~/BurpSuitePro/burpsuite_pro_v2021.12.1.jar &"
+
 source /home/xnor/.config/broot/launcher/bash/br
