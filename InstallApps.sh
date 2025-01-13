@@ -12,7 +12,7 @@ sudo pacman -S --noconfirm \
     wget \
     curl \
     trash-cli \
-    nvim \
+    neovim \
     yazi \
     p7zip \
     htop \
@@ -29,12 +29,12 @@ sudo pacman -S --noconfirm \
     bat \
     tealdeer \
     starship \
-    btrfs-assistant
+    snapper
 
 # Install Hyperland
 echo "Installing Hyperland..."
 sudo pacman -S --noconfirm \
-    hyperland \
+    hyprland \
     rofi-wayland \
     waybar
 
@@ -54,30 +54,30 @@ sudo pacman -S --noconfirm \
 # Install graphical applications
 echo "Installing graphical applications..."
 sudo pacman -S --noconfirm flatpak
-flatpak install flathub io.github.flattool.Warehouse
-flatpak install flathub org.mozilla.firefox
-flatpak install flathub org.freecad.FreeCAD
-flatpak install flathub org.kicad.KiCad
-flatpak install flathub org.godotengine.Godot
-flatpak install flathub com.valvesoftware.Steam
+flatpak install -y flathub io.github.flattool.Warehouse
+flatpak install -y flathub org.mozilla.firefox
+flatpak install -y flathub org.freecad.FreeCAD
+flatpak install -y flathub org.kicad.KiCad
+flatpak install -y flathub org.godotengine.Godot
+flatpak install -y flathub com.valvesoftware.Steam
 
 echo "Installing hacking tools..."
-flatpak install flathub org.zaproxy.ZAP
-flatpak install flathub org.wireshark.Wireshark
-flatpak install flathub org.ghidra_sre.Ghidra
+flatpak install -y flathub org.zaproxy.ZAP
+flatpak install -y flathub org.wireshark.Wireshark
+flatpak install -y flathub org.ghidra_sre.Ghidra
 
 # Install media tools
 echo "Installing media tools..."
 sudo pacman -S --noconfirm \
     ffmpeg \
     vlc
-flatpak install flathub fr.handbrake.ghb
-flatpak install flathub org.kde.kdenlive
-flatpak install flathub org.blender.Blender
-flatpak install flathub fm.reaper.Reaper
-flatpak install flathub org.gimp.GIMP
-flatpak install flathub org.inkscape.Inkscape
-flatpak install flathub io.github.JaGoLi.ytdl_gui
+flatpak install -y flathub fr.handbrake.ghb
+flatpak install -y flathub org.kde.kdenlive
+flatpak install -y flathub org.blender.Blender
+flatpak install -y flathub fm.reaper.Reaper
+flatpak install -y flathub org.gimp.GIMP
+flatpak install -y flathub org.inkscape.Inkscape
+flatpak install -y flathub io.github.JaGoLi.ytdl_gui
 
 
 # Install font packages
@@ -92,7 +92,7 @@ sudo pacman -S --noconfirm \
 echo "Installing other useful utilities..."
 sudo pacman -S --noconfirm \
     gparted \
-    geany
+    #geany
 
 # Enable snapd (if needed)
 #echo "Enabling snapd..."
